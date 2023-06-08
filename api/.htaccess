@@ -1,0 +1,35 @@
+options All -Indexes
+
+RewriteEngine On
+
+RewriteRule ^([-a-z]*)$ index.php?reqpg=$1 [L] # Default
+
+RewriteRule ^profil/([-a-zA-Z0-9_]*)$ index.php?reqpg=profil&id=$1 [L] #For Detail Profile
+
+RewriteRule ^white-list/([-a-zA-Z0-9_]*)$ index.php?reqpg=white-list&id=$1 [L] #For CRUD Whitelist
+
+RewriteRule ^password/([-a-zA-Z0-9_]*)$ index.php?reqpg=password&id=$1 [L] #For Change Password
+
+RewriteRule ^access/tag=([-a-zA-Z0-9_]*)-hw=([-a-zA-Z0-9_]*)-type=([-a-zA-Z0-9_]*)$ index.php?reqpg=access&var1=$1&var2=$2&var3=$3 [L] #For Check-in Hardware
+RewriteRule ^accessOld/tag=([-a-zA-Z0-9_]*)-hw=([-a-zA-Z0-9_]*)-type=([-a-zA-Z0-9_]*)$ index.php?reqpg=accessOld&var1=$1&var2=$2&var3=$3 [L] #For Check-in Hardware
+
+RewriteRule ^acs/([-a-zA-Z0-9_]*)$ index.php?reqpg=acs&id=$1 [L] # For Get Realtime ACS Sensor
+#RewriteRule ^acs/([-a-zA-Z0-9_]*)/([-a-zA-Z0-9_]*)$ index.php?reqpg=acs&kind=$1&id=$2 [L] # For Get Realtime ACS Sensor
+
+RewriteRule ^chart/([-a-zA-Z0-9_]*)/([-a-zA-Z0-9_]*)$ index.php?reqpg=graph&kind=$1&id=$2 [L] # For Get Realtime ACS Sensor
+
+RewriteRule ^current-sensor/hw=([-a-zA-Z0-9_]*)/a=([-a-zA-Z0-9_.]*)/w=([-a-zA-Z0-9_.]*)$ index.php?reqpg=current-sensor&var1=$1&var2=$2&var3=$3 [L] #For Input Current Sensor
+
+RewriteRule ^user/([-a-zA-Z0-9_]*)$ index.php?reqpg=user&id=$1 [L] # For CRUD Users
+
+RewriteRule ^device/([-a-zA-Z0-9_]*)$ index.php?reqpg=device&id=$1 [L] # For CRUD Devices
+
+RewriteRule ^account/([-a-zA-Z0-9_]*)$ index.php?reqpg=account&id=$1 [L] # For CRUD Account Web
+
+RewriteRule ^activity/([-a-zA-Z0-9_]*)$ index.php?reqpg=activity&id=$1 [L] # Get Activity bi Id
+
+RewriteRule ^([-a-z]*)/([-a-zA-Z0-9_]*)$ index.php?reqpg=$1&action=$2 [L] # For Ajax Table without Date
+
+RewriteRule ^([-a-z]*)/([-a-zA-Z0-9_]*)/([-a-zA-Z0-9_]*)/([-a-zA-Z0-9_]*)$ index.php?reqpg=$1&action=$2&sTime=$3&fTime=$4 [L] #For Ajax Table with Date
+
+RewriteRule ^([-a-z]*)/([-a-zA-Z0-9_]*)/([-a-zA-Z0-9_]*)/([-a-zA-Z0-9_]*)/([-a-zA-Z0-9_]*)$ index.php?reqpg=$1&action=$2&sTime=$3&fTime=$4&id=$5 [L] #For Ajax Table with Date by Id

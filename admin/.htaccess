@@ -1,0 +1,40 @@
+options All -Indexes
+
+RewriteEngine On
+
+RewriteRule ^([-a-z]*)$ index.php?include=$1 [L] # Default Page Redirect
+
+#RewriteRule ^account/([0-9]*)$ index.php?include=details-account&data=$2 [L]
+
+# RewriteRule ^([-a-z]*)-id-([0-9]*)$ index.php?include=$1&data=$2 [L]
+
+RewriteRule ^([-a-z]*)-failed=([-a-zA-Z_]*)$ index.php?include=$1&gagal=$2 [L] # Page Login
+
+# RewriteRule ^([-a-z]*)-id-([0-9]*)_notif-([-a-zA-Z_]*)$ index.php?include=$1&data=$2&notif=$3 [L]
+
+RewriteRule ^([-a-z]*)_notif-([-a-zA-Z_]*)$ index.php?include=$1&notif=$2 [L] # Page with Notif
+
+RewriteRule ^([-a-z]*)-([-a-zA-Z0-9_]*)_notif-([-a-zA-Z_]*)$ index.php?include=$1&data=$2&notif=$3 [L] # Page with Notif
+
+RewriteRule ^([-a-z]*)_notif-([-a-zA-Z_]*)_type=([a-z]*)$ index.php?include=$1&notif=$2&jenis=$3 [L] # Page with Notif Form Kosong (Edit Profil)
+
+# RewriteRule ^([-a-z]*)_notif-([-a-zA-Z_]*)=([-a-zA-Z0-9_]*)$ index.php?include=$1&notif=$2&data=$3 [L] # Page Show Notif Delete Confirm
+
+RewriteRule ^([-a-z]*)-([-a-zA-Z0-9_]*)$ index.php?include=$1&data=$2 [L] # Page update / detail data
+
+RewriteRule ^([-a-z]*)-([-a-zA-Z0-9_]*)_notif-([-a-zA-Z_]*)_type=([a-z]*)$ index.php?include=$1&data=$2&notif=$3&jenis=$4 [L] # Page update / detail data w Notif Empty
+
+RewriteRule ^([-a-z]*)-id-([-a-zA-Z0-9_]*)$ index.php?include=$1&data=$2 [L] # Page with GET [DATA]
+
+RewriteRule ^confirm-add-([-a-z]*)=([-a-zA-Z0-9_]*)-on=([-a-zA-Z0-9_]*)$ index.php?include=confirm-add-$1&idUser=$2&idDev=$3 [L] # Page Conf Delete with GET [idDel]
+
+RewriteRule ^confirm-delete-([-a-z]*)=([-a-zA-Z0-9_]*)$ index.php?include=confirm-delete-$1&idDel=$2 [L] # Page Conf Delete with GET [idDel]
+RewriteRule ^confirm-des-([-a-z]*)=([-a-zA-Z0-9_]*)$ index.php?include=confirm-des-$1&idDes=$2 [L] # Page Conf DES with GET [idDes]
+
+
+#RewriteRule ^([-a-z]*)-halaman-([0-9]*)$ index.php?include=$1&halaman=$2 [L]
+
+#RewriteRule ^([-a-z]*)-id-([0-9]*)-mode-([a-z]*)_notif-([-a-zA-Z_]*)$ index.php?include=$1&data=$2&aksi=$3&notif=$4 [L]
+
+# RewriteRule ^([-a-z]*)-id-([0-9]*)_notif-([-a-zA-Z_]*)-jenis=([a-z]*)$ index.php?include=$1&data=$2&notif=$3&jenis=$4 [L]
+

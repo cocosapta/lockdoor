@@ -1,0 +1,20 @@
+#bdlg {
+    /* background: #8eff84; */
+    background-image: url("../img/Vector_2646.jpg");
+    background-size: cover;
+}
+
+#cdbd {
+    border: 10px solid rgb(255, 255, 255);
+    border-radius: 15px;
+}
+
+#imgcstm {
+    border-radius: 10px;
+}
+#lgsdcstm{
+    background-color: white;
+}
+#txtcstmblack{
+    color: black;
+}
